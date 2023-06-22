@@ -1,0 +1,20 @@
+<div class="main" *ngIf="hasStarted">
+  <p>Project 0.1</p>
+
+  <div class="infoBox">
+    {{ player.unit.data.name }}
+  </div>
+
+  <div class="console">
+    <div class="log" *ngIf="log">
+      <div class="input">{{ log.input }}</div>
+      <div class="response" *ngFor="let response of log.response">
+        <span>{{ response.text }}</span>
+      </div>
+    </div>
+  </div>
+  <div class="inputField">
+    <div>{{ player.user }}</div>
+    <input (keyup)="inputHandler($event)" [formControl]="mainInput" />
+  </div>
+</div>
